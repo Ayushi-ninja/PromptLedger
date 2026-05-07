@@ -32,3 +32,35 @@ Build the spend input form — tool selector, plan dropdown, monthly spend, seat
 count, team size, and use case fields. Implement localStorage persistence so form
 state survives page reloads. Define the full TypeScript types for AuditInput and
 AuditResult. Begin sketching the audit engine rules for at least 3 tools.
+
+## Day 2 — 2026-05-07
+
+**Hours worked:** 5
+
+**What I did:**
+Defined all TypeScript types for AuditInput, ToolEntry, and UseCase. Built the
+tool options config covering all 8 required tools with their respective plans.
+Implemented a usePersistedForm hook that reads from localStorage on mount and
+syncs on every state change — added a hydration flag to prevent the flash of
+default values before localStorage loads. Built the full spend input form: tool
+selector as toggle buttons, per-tool fields (plan dropdown, monthly spend, seats),
+team size and use case selectors. Added validation before form submission.
+Created the /audit/preview route as a placeholder for Day 3.
+
+**What I learned:**
+Next.js App Router requires 'use client' on any component using useState or
+localStorage. Initially forgot this and got a hydration error. Also learned that
+reading localStorage during SSR causes a mismatch — the hydrated flag pattern
+solves this cleanly by deferring the read to useEffect.
+
+**Blockers / what I'm stuck on:**
+The plan dropdown for Anthropic API and OpenAI API only has one option
+(Pay-as-you-go) since they are token-based. Need to decide how to handle spend
+input for these — likely just a monthly spend field with no seats, since per-token
+billing doesn't map to seat count. Will address this in the audit engine tomorrow.
+
+**Plan for tomorrow:**
+Build the audit engine as a pure TypeScript function. Write defensible rules for
+all 8 tools covering wrong-plan-for-team-size, cheaper-same-vendor-plan, and
+cheaper-alternative recommendations. Write all 5+ audit engine tests. Begin the
+results page layout.

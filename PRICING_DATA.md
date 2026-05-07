@@ -25,13 +25,14 @@ All prices verified from official vendor pricing pages. Last verified: 2026-05-0
 - Max: $100/user/month — https://claude.ai/upgrade — verified 2026-05-06
 - Team: $30/user/month (min 5 seats) — https://claude.ai/upgrade — verified 2026-05-06
 - Enterprise: Custom pricing — https://www.anthropic.com/enterprise — verified 2026-05-06
+- API direct: 
 
 
 ## Anthropic API (direct)
 
-- claude-opus-4: $5 input / $25 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
-- claude-sonnet-4: $3 input / $15 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
-- claude-haiku-4: $1 input / $5 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
+- claude-opus-4: $5 input / $20 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
+- claude-sonnet-4: $2.4 input / $12 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
+- claude-haiku-4: $0.8 input / $4 output per million tokens — https://www.anthropic.com/pricing — verified 2026-05-06
 
 
 ## ChatGPT (openai.com)
