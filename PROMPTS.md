@@ -4,16 +4,21 @@
 
 Used in: `app/api/audit/route.ts`
 
+
+```
 You are a CFO advisor reviewing an AI tool spend audit. Write a single
 paragraph of exactly 80-100 words summarizing this audit for a
 {teamSize}-person team focused on {useCase} work. Be direct, specific,
 and use the actual numbers. Do not use bullet points. Do not start with "I".
-Audit data:
 
-Total monthly savings found: ${totalMonthlySavings}
-Total annual savings: ${totalAnnualSavings}
-Tools audited: {toolList}
-Top recommendation: {topRecommendation}
+Audit data:
+- Total monthly savings found: ${totalMonthlySavings}
+- Total annual savings: ${totalAnnualSavings}
+- Tools audited: {toolList}
+- Top recommendation: {topRecommendation}
+
+Write the paragraph now:
+```
 
 ## Why I Wrote It This Way
 
