@@ -64,17 +64,42 @@ export default function PreviewPage() {
   }
 
   if (loading || !result) {
-    return (
-      <main className="max-w-2xl mx-auto px-4 py-12 text-center">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4" />
-          <div className="h-4 bg-gray-200 rounded w-64 mx-auto" />
+  return (
+    <main className="max-w-2xl mx-auto px-4 py-12">
+      <div className="animate-pulse">
+        {/* Hero skeleton */}
+        <div className="text-center mb-12">
+          <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-4" />
+          <div className="h-12 bg-gray-200 rounded w-48 mx-auto mb-3" />
+          <div className="h-6 bg-gray-200 rounded w-40 mx-auto mb-2" />
+          <div className="h-4 bg-gray-200 rounded w-56 mx-auto" />
         </div>
-        <p className="text-gray-500 mt-8">Running your audit...</p>
-      </main>
-    )
-  }
-
+        {/* Summary skeleton */}
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+          <div className="h-3 bg-gray-200 rounded w-20 mb-3" />
+          <div className="h-4 bg-gray-200 rounded w-full mb-2" />
+          <div className="h-4 bg-gray-200 rounded w-full mb-2" />
+          <div className="h-4 bg-gray-200 rounded w-3/4" />
+        </div>
+        {/* Tool card skeletons */}
+        {[1, 2, 3].map(i => (
+          <div key={i} className="border border-gray-200 rounded-xl p-5 mb-3">
+            <div className="flex justify-between mb-3">
+              <div className="h-4 bg-gray-200 rounded w-24" />
+              <div className="h-4 bg-gray-200 rounded w-20" />
+            </div>
+            <div className="flex gap-6 mb-3">
+              <div className="h-4 bg-gray-200 rounded w-16" />
+              <div className="h-4 bg-gray-200 rounded w-16" />
+              <div className="h-4 bg-gray-200 rounded w-16" />
+            </div>
+            <div className="h-3 bg-gray-200 rounded w-full" />
+          </div>
+        ))}
+      </div>
+    </main>
+  )
+}
   const totalCurrentSpend = result.tools.reduce((s, t) => s + t.currentSpend, 0)
 
   return (
@@ -96,7 +121,7 @@ export default function PreviewPage() {
           </>
         ) : (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-1">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-1">
               Save ${result.totalMonthlySavings.toLocaleString()}
               <span className="text-gray-400 text-3xl">/mo</span>
             </h1>
@@ -164,7 +189,7 @@ export default function PreviewPage() {
                 </span>
               </div>
 
-              <div className="flex gap-6 text-sm mb-3">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm mb-3">
                 <div>
                   <p className="text-gray-400 text-xs">Current</p>
                   <p className="font-medium">${tool.currentSpend}/mo</p>

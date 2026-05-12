@@ -76,7 +76,7 @@ export default function Home() {
         <h2 className="text-lg font-semibold mb-4">Your Team</h2>
         <div className="flex gap-4">
           <div className="flex-1">
-            <label className="block text-sm mb-1">Team size</label>
+            <label  htmlFor="teamSize" className="block text-sm mb-1">Team size</label>
             <input
               type="number"
               min={1}
@@ -86,7 +86,7 @@ export default function Home() {
             />
           </div>
           <div className="flex-1">
-            <label className="block text-sm mb-1">Primary use case</label>
+            <label  htmlFor="teamSize" className="block text-sm mb-1">Primary use case</label>
             <select
               value={form.useCase}
               onChange={e => setForm(prev => ({ ...prev, useCase: e.target.value as UseCase }))}
@@ -112,6 +112,7 @@ export default function Home() {
               <button
                 key={tool.id}
                 onClick={() => added ? removeTool(tool.id) : addTool(tool.id)}
+                aria-label={`${added ? 'Remove' : 'Add'} ${tool.name}`}
                 className={`px-3 py-1.5 rounded-full text-sm border transition-all ${
                   added
                     ? 'bg-black text-white border-black'
