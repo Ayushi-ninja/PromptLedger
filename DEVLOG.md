@@ -150,3 +150,38 @@ verify a domain before launch to send from a branded address.
 Polish the UI for mobile and Lighthouse scores. Write ARCHITECTURE.md
 with Mermaid diagram. Write REFLECTION.md. Run Lighthouse on deployed
 URL and fix any scores below threshold. Begin TESTS.md.
+
+## Day 6 — 2026-05-12
+
+**Hours worked:** 6
+
+**What I did:**
+Wrote ARCHITECTURE.md with a Mermaid system diagram, full data flow
+description, stack justification, and what I would change at 10k
+audits/day. Wrote REFLECTION.md answering all five questions with
+specific examples — the hydration bug writeup took the most time
+because I had to reconstruct my debugging steps accurately. Wrote
+README.md with setup instructions and five trade-off decisions.
+Wrote TESTS.md and PROMPTS.md. Fixed accessibility issues across
+the form and results pages — added htmlFor labels, aria-labels on
+icon buttons, and improved color contrast. Fixed mobile layout on
+the tool breakdown cards. Ran Lighthouse on the deployed URL and
+fixed issues to meet the score thresholds.
+
+**What I learned:**
+Lighthouse accessibility failures are mostly label and contrast
+issues that are fast to fix once you know where to look. The bigger
+performance gains came from ensuring no layout shift on hydration —
+the hydrated flag pattern that fixed the bug also improved the CLS
+score significantly.
+
+**Blockers / what I'm stuck on:**
+Lighthouse Best Practices score flagged a missing meta description
+on the home page. Fixed by adding it to app/layout.tsx metadata.
+Performance on mobile is borderline — the Anthropic API call adds
+perceived latency even with the optimistic local rendering pattern.
+
+**Plan for tomorrow:**
+Final day. Run all tests and confirm green. Verify git log shows
+commits on 5+ distinct days. Do a full end-to-end test on the
+deployed URL. Write DEVLOG Day 7. Submit the Google Form.
